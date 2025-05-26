@@ -22,7 +22,7 @@ function App() {
   };
 
   const handleReset = () => {
-    tik.pause();
+    // tik.pause();
     setIsStart(false);
     setHours(0);
     setMinutes(0);
@@ -44,17 +44,17 @@ function App() {
   const handlePause = () => {
     setIsPaused(false);
     clearInterval(timerID);
-    tik.pause();
+    // tik.pause();
   };
 
   const handleResume = () => {
     setIsPaused(true);
-    tik.play();
+    // tik.play();
     runTimer(seconds, minutes, hours, timerID);
   };
 
   const runTimer = (sec, min, hr, tid) => {
-    tik.play();
+    // tik.play();
     if (sec > 0) {
       setSeconds((s) => s - 1);
     } else if (sec === 0 && min > 0) {
@@ -67,7 +67,7 @@ function App() {
     }
 
     if (sec === 0 && min === 0 && hr === 0) {
-      tik.pause();
+      // tik.pause();
       timerEndAudio.play();
       setHours(0);
       setMinutes(0);
@@ -75,7 +75,7 @@ function App() {
       setIsStart(false);
       clearInterval(tid);
 
-      alert("timer finished!! click OK");
+      confirm("timer finished!! click OK");
       timerEndAudio.pause();
     }
   };
