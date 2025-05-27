@@ -67,16 +67,19 @@ function App() {
     }
 
     if (sec === 0 && min === 0 && hr === 0) {
-      // tik.pause();
-      timerEndAudio.play();
+      let stop;
+
       setHours(0);
       setMinutes(0);
       setSeconds(0);
       setIsStart(false);
       clearInterval(tid);
+      timerEndAudio.play();
 
-      confirm("timer finished!! click OK");
-      timerEndAudio.pause();
+      stop = confirm("timer finished!! click OK");
+      if (stop) {
+        timerEndAudio.pause();
+      }
     }
   };
 

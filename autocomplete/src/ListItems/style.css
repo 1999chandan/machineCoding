@@ -1,0 +1,8 @@
+.listItem {
+  background: transparent;
+}
+.listItem:hover {
+  border: none;
+  border-radius: none;
+  background-color: black;
+}
